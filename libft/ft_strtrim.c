@@ -6,13 +6,13 @@
 /*   By: seciurte <seciurte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 10:19:32 by seciurte          #+#    #+#             */
-/*   Updated: 2020/11/28 08:41:48 by seciurte         ###   ########.fr       */
+/*   Updated: 2021/04/01 18:44:45 by seciurte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		is_in(char const c, char const *set)
+static int	is_in(char const c, char const *set)
 {
 	while (*set)
 		if (c == *set++)
@@ -35,8 +35,8 @@ static size_t	trim_s(char const *s, char const *set)
 
 static size_t	trim_e(char const *s, char const *set)
 {
-	size_t		n;
-	size_t		i;
+	size_t	n;
+	size_t	i;
 
 	n = 0;
 	i = ft_strlen(s) - 1;
@@ -45,7 +45,7 @@ static size_t	trim_e(char const *s, char const *set)
 	return (n);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char		*str;
 	size_t		len;
@@ -55,14 +55,17 @@ char			*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	len = ft_strlen(s1);
-	if ((start = trim_s(s1, set)) == len)
+	start = trim_s(s1, set);
+	if (start == len)
 	{
-		if (!(str = malloc(sizeof(char))))
+		str = malloc(sizeof(char));
+		if (str == NULL)
 			return (NULL);
 		return (str);
 	}
 	end = trim_e(s1, set);
-	if (!(str = malloc(sizeof(char) * (len - start - end + 1))))
+	(str = malloc(sizeof(char) * (len - start - end + 1)));
+	if (str == NULL)
 		return (NULL);
 	ft_strlcpy(str, s1 + start, len - end - start + 1);
 	return (str);

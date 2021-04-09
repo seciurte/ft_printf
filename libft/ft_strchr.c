@@ -6,7 +6,7 @@
 /*   By: seciurte <seciurte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 11:16:34 by seciurte          #+#    #+#             */
-/*   Updated: 2020/11/28 08:06:33 by seciurte         ###   ########.fr       */
+/*   Updated: 2021/04/01 18:48:01 by seciurte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 	while (len--)
 	{
 		if (*s == (unsigned char)c)
-			return ((char*)s);
+			return ((char *)s);
 		s++;
 	}
 	return (NULL);

@@ -6,13 +6,13 @@
 /*   By: seciurte <seciurte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 16:15:23 by seciurte          #+#    #+#             */
-/*   Updated: 2020/11/25 18:40:56 by seciurte         ###   ########.fr       */
+/*   Updated: 2021/04/01 18:42:03 by seciurte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int		len;
 

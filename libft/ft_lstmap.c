@@ -6,7 +6,7 @@
 /*   By: seciurte <seciurte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 19:51:16 by seciurte          #+#    #+#             */
-/*   Updated: 2020/11/28 08:45:37 by seciurte         ###   ########.fr       */
+/*   Updated: 2021/04/01 19:49:54 by seciurte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void*))
 
 	if (!lst)
 		return (NULL);
-	if (!(new = ft_lstnew(f(lst->content))))
+	new = ft_lstnew(f(lst->content));
+	if (new == NULL)
 		return (NULL);
 	curr_new = new;
 	curr_lst = lst->next;
 	while (curr_lst)
 	{
-		if (!(curr_new->next = ft_lstnew(f(curr_lst->content))))
+		curr_new->next = ft_lstnew(f(curr_lst->content));
+		if (curr_new == NULL)
 		{
 			ft_lstclear(&new, del);
 			return (NULL);

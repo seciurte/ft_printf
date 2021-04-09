@@ -6,13 +6,13 @@
 /*   By: seciurte <seciurte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 12:06:29 by seciurte          #+#    #+#             */
-/*   Updated: 2020/11/28 08:08:17 by seciurte         ###   ########.fr       */
+/*   Updated: 2021/04/01 19:41:31 by seciurte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	const char		*last_el_s;
 	char			*last_el_d;

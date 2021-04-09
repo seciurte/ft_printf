@@ -6,7 +6,7 @@
 /*   By: seciurte <seciurte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 13:05:59 by seciurte          #+#    #+#             */
-/*   Updated: 2021/02/20 11:13:53 by seciurte         ###   ########.fr       */
+/*   Updated: 2021/04/09 13:44:06 by seciurte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	nbr_len(long long n, int base_len)
 	return (i);
 }
 
-char		*ft_itoa_base(long long n, char *base)
+char	*ft_itoa_base(long long n, char *base)
 {
 	char		*str;
 	int			n_len;

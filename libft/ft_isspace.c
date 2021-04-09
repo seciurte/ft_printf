@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: seciurte <seciurte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 15:50:14 by seciurte          #+#    #+#             */
-/*   Updated: 2021/02/20 11:12:21 by seciurte         ###   ########.fr       */
+/*   Created: 2021/04/06 15:44:57 by seciurte          #+#    #+#             */
+/*   Updated: 2021/04/06 16:18:59 by seciurte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isspace(int c)
+int	ft_isspace(int c)
 {
-	return ((c == '\t' || c == '\n' || c == '\v'
-				|| c == '\f' || c == '\r' || c == ' '));
+	return ((c >= 9 && c <= 13) || c == 32);
 }

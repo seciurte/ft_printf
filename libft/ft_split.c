@@ -6,13 +6,13 @@
 /*   By: seciurte <seciurte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 10:36:33 by seciurte          #+#    #+#             */
-/*   Updated: 2020/11/25 17:01:32 by seciurte         ###   ########.fr       */
+/*   Updated: 2021/04/01 18:47:23 by seciurte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t		cnt_wrds(char const *s, char c)
+static size_t	cnt_wrds(char const *s, char c)
 {
 	int	swt;
 	int	cnt;
@@ -33,7 +33,7 @@ static size_t		cnt_wrds(char const *s, char c)
 	return (cnt);
 }
 
-static size_t		wrdlen(char const *s, char c)
+static size_t	wrdlen(char const *s, char c)
 {
 	size_t	len;
 
@@ -43,21 +43,23 @@ static size_t		wrdlen(char const *s, char c)
 	return (len);
 }
 
-char				**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**str;
 	size_t	l_stc;
 	size_t	l_wrd;
 
 	l_stc = cnt_wrds(s, c) + 1;
-	if (!(str = malloc(sizeof(char**) * l_stc)))
+	str = malloc(sizeof(char **) * l_stc);
+	if (str == NULL)
 		return (NULL);
 	while (s != NULL && *s)
 	{
 		if (*s != c)
 		{
 			l_wrd = wrdlen(s, c) + 1;
-			if (!(*str = malloc(sizeof(char) * l_wrd)))
+			*str = malloc(sizeof(char) * l_wrd);
+			if (str == NULL)
 				return (NULL);
 			ft_strlcpy(*str, s, l_wrd);
 			s += l_wrd - 1;

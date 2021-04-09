@@ -6,7 +6,7 @@
 /*   By: seciurte <seciurte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 17:43:27 by seciurte          #+#    #+#             */
-/*   Updated: 2020/11/28 08:39:18 by seciurte         ###   ########.fr       */
+/*   Updated: 2021/04/01 19:54:59 by seciurte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (start > ft_strlen(s))
 	{
-		if (!(sub = malloc(sizeof(char))))
+		sub = malloc(sizeof(char));
+		if (sub == NULL)
 			return (NULL);
 		*sub = '\0';
 		return (sub);
 	}
-	if (!(sub = malloc(sizeof(char) * (len + 1))))
+	sub = malloc(sizeof(char) * (len + 1));
+	if (sub == NULL)
 		return (NULL);
 	ft_strlcpy(sub, s + start, (len + 1));
 	return (sub);

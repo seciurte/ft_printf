@@ -6,7 +6,7 @@
 /*   By: seciurte <seciurte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 16:16:05 by seciurte          #+#    #+#             */
-/*   Updated: 2020/11/28 08:28:50 by seciurte         ###   ########.fr       */
+/*   Updated: 2021/04/01 18:15:59 by seciurte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*el;
 
-	if (!(el = malloc(size * nmemb)))
+	el = malloc(size * nmemb);
+	if (el == NULL)
 		return (NULL);
 	if ((size * nmemb) != 0)
 		ft_bzero(el, (nmemb * size));
